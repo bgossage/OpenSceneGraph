@@ -92,3 +92,7 @@ _CPack_Packages/
 #packages
 *.tar.gz
 *.zip
+
+# Build Dirs
+release_build*/**
+debug_build*/**
