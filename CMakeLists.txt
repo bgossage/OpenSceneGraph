@@ -253,6 +253,10 @@ INCLUDE_DIRECTORIES(SYSTEM ${OPENGL_INCLUDE_DIR})
 IF(WIN32 AND NOT ANDROID)
 
     IF(MSVC)
+        IF(MSVC_VERSION GREATER_EQUAL 1900)
+            SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
+        ENDIF(MSVC_VERSION)
+    
         # This option is to enable the /MP switch for Visual Studio 2005 and above compilers
         OPTION(WIN32_USE_MP "Set to ON to build OpenSceneGraph with the /MP option (Visual Studio 2005 and above)." OFF)
         MARK_AS_ADVANCED(WIN32_USE_MP)
